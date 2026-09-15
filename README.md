@@ -2,9 +2,9 @@
 
 Interactive career-readiness portal for students, families, educators, and school districts.
 
-## Live prototype
+## Live site
 
-https://orbit-school-to-success.jheneal-wilson.chatgpt.site
+https://schooltosuccess.theorbitsuite.com
 
 ## Run locally
 
