@@ -1,0 +1,244 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="ORBIT School to Success — student career readiness, evidence, pathways, and measurable growth.">
+  <title>ORBIT School to Success™</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='15' fill='%2309152d'/%3E%3Ccircle cx='32' cy='32' r='16' fill='none' stroke='%23d4a53d' stroke-width='4'/%3E%3Cpath d='M10 32c10-13 34-18 44-4' fill='none' stroke='%2358d5c2' stroke-width='4' stroke-linecap='round'/%3E%3Ccircle cx='52' cy='27' r='5' fill='%23d4a53d'/%3E%3C/svg%3E">
+  <style>
+    :root{
+      --navy:#09152d;--navy2:#10254b;--ink:#12213c;--muted:#68758a;--line:#dfe6ef;
+      --paper:#fff;--bg:#f3f6fa;--gold:#c9972b;--gold2:#efc45b;--blue:#1769f2;
+      --teal:#12a98e;--purple:#7047dc;--orange:#ef7d32;--red:#d84e5c;--shadow:0 10px 30px rgba(13,30,61,.08);
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.45 Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+    button,input,textarea,select{font:inherit}
+    button{cursor:pointer}
+    .app{min-height:100vh;display:grid;grid-template-columns:255px minmax(0,1fr)}
+    .sidebar{position:sticky;top:0;height:100vh;background:linear-gradient(180deg,#071229,#0b2147);color:#dce6fa;padding:22px 15px;display:flex;flex-direction:column;z-index:20}
+    .brand{display:flex;gap:11px;align-items:center;padding:0 8px 18px;border-bottom:1px solid #ffffff18}
+    .brandmark{width:42px;height:42px;border:2px solid var(--gold);border-radius:50%;display:grid;place-items:center;position:relative;font-weight:900;color:white}
+    .brandmark:after{content:"";position:absolute;width:8px;height:8px;border-radius:50%;background:#5ce0cc;right:-2px;top:4px;box-shadow:0 0 10px #5ce0cc}
+    .brand strong{display:block;color:#fff;font-size:1.12rem;letter-spacing:.06em}.brand small{font-size:.68rem;color:var(--gold2)}
+    .role-switch{margin:15px 5px 10px}.role-switch label{display:block;font-size:.7rem;text-transform:uppercase;letter-spacing:.12em;color:#8fa2c5;margin:0 0 6px}
+    .role-switch select{width:100%;background:#ffffff12;border:1px solid #ffffff20;color:white;padding:10px 11px;border-radius:10px}.role-switch option{color:#111}
+    nav{overflow:auto;padding:4px 0;flex:1}.nav-group{font-size:.67rem;text-transform:uppercase;letter-spacing:.14em;color:#6f85aa;margin:16px 10px 6px}
+    .nav-btn{width:100%;border:0;background:transparent;color:#b8c6df;display:flex;align-items:center;gap:11px;padding:10px 12px;border-radius:10px;text-align:left;margin:2px 0}
+    .nav-btn:hover,.nav-btn.active{background:linear-gradient(100deg,#1769f2,#5d45e7);color:white;box-shadow:0 7px 16px #07152c66}
+    .nav-icon{width:22px;text-align:center}.nav-label{font-size:.86rem;font-weight:650}
+    .side-card{background:#ffffff0b;border:1px solid #ffffff19;border-radius:13px;padding:13px;margin-top:10px}
+    .side-card small{color:#9fb1ce}.side-card b{display:block;color:#fff;margin:4px 0}.side-meter{height:7px;background:#ffffff18;border-radius:10px;overflow:hidden}.side-meter span{display:block;width:68%;height:100%;background:linear-gradient(90deg,var(--gold),#5ce0cc)}
+    main{min-width:0}.topbar{height:74px;background:#fff;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;padding:0 30px;position:sticky;top:0;z-index:10}
+    .mobile-menu{display:none;border:0;background:transparent;font-size:1.35rem}
+    .hello strong{font-size:1.08rem}.hello small{display:block;color:var(--muted)}
+    .top-actions{display:flex;align-items:center;gap:10px}.pill{border:1px solid var(--line);background:#fff;color:var(--ink);padding:9px 13px;border-radius:999px;font-weight:700;font-size:.82rem}
+    .pill.primary{background:var(--navy);color:#fff;border-color:var(--navy)}.avatar{width:38px;height:38px;border-radius:50%;background:linear-gradient(135deg,#ecd0ff,#74d6ff);display:grid;place-items:center;font-weight:900}
+    .content{padding:25px 30px 42px;max-width:1600px;margin:auto}.view{display:none}.view.active{display:block;animation:fade .22s ease}
+    @keyframes fade{from{opacity:.2;transform:translateY(4px)}to{opacity:1;transform:none}}
+    .page-head{display:flex;align-items:flex-start;justify-content:space-between;gap:20px;margin-bottom:20px}.page-head h1{font-size:1.65rem;margin:0 0 4px}.page-head p{margin:0;color:var(--muted);max-width:720px}
+    .btn{border:0;background:var(--navy);color:#fff;padding:11px 15px;border-radius:10px;font-weight:800;font-size:.88rem}.btn:hover{filter:brightness(1.08)}.btn.blue{background:var(--blue)}.btn.light{background:#edf3ff;color:#1558c9}.btn.outline{background:#fff;color:var(--ink);border:1px solid var(--line)}.btn.gold{background:var(--gold);color:#111}
+    .grid{display:grid;gap:16px}.kpis{grid-template-columns:repeat(4,minmax(0,1fr));margin-bottom:16px}.two{grid-template-columns:1.15fr .85fr}.three{grid-template-columns:repeat(3,minmax(0,1fr))}
+    .card{background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:18px;box-shadow:var(--shadow);min-width:0}.card h2,.card h3{margin:0 0 5px}.card-sub{color:var(--muted);font-size:.86rem;margin-bottom:15px}
+    .kpi{display:flex;justify-content:space-between;align-items:center}.kpi small{color:var(--muted);display:block;text-transform:uppercase;letter-spacing:.08em;font-size:.68rem;font-weight:800}.kpi b{display:block;font-size:1.75rem;margin:3px 0}.delta{font-size:.75rem;color:var(--teal);font-weight:800}.kpi-symbol{height:46px;width:46px;border-radius:14px;background:#edf3ff;color:var(--blue);display:grid;place-items:center;font-size:1.3rem}
+    .hero-card{background:linear-gradient(125deg,#07152e,#123a74);color:white;overflow:hidden;position:relative;padding:22px}.hero-card:after{content:"";position:absolute;width:260px;height:260px;border:38px solid #ffffff0a;border-radius:50%;right:-100px;top:-90px}.hero-card h2{font-size:1.45rem;max-width:620px}.hero-card p{color:#c8d7ef;max-width:710px}.hero-stats{display:flex;gap:24px;margin-top:20px;position:relative;z-index:1}.hero-stats b{font-size:1.45rem;color:var(--gold2)}.hero-stats small{display:block;color:#aebfdb}
+    .score-wrap{display:flex;align-items:center;gap:20px}.ring{--value:82;width:130px;height:130px;border-radius:50%;background:conic-gradient(var(--teal) calc(var(--value)*1%),#dfece8 0);display:grid;place-items:center;position:relative;flex:0 0 auto}.ring:before{content:"";position:absolute;width:96px;height:96px;background:#fff;border-radius:50%}.ring span{position:relative;font-size:2rem;font-weight:900}.ring small{font-size:.72rem;color:var(--muted);display:block;text-align:center}
+    .bar-row{display:grid;grid-template-columns:145px 1fr 38px;gap:10px;align-items:center;margin:12px 0;font-size:.83rem}.bar{height:8px;background:#edf0f5;border-radius:9px;overflow:hidden}.bar span{display:block;height:100%;border-radius:9px;background:linear-gradient(90deg,var(--blue),#5bd4c1)}
+    .path-list{display:grid;gap:9px}.path{display:grid;grid-template-columns:38px 1fr auto;align-items:center;gap:11px;padding:11px;border:1px solid var(--line);border-radius:12px}.path-icon{width:38px;height:38px;border-radius:10px;background:#edf3ff;display:grid;place-items:center}.path b{display:block}.path small{color:var(--muted)}.match{color:var(--teal);font-weight:900}
+    .action-list{list-style:none;padding:0;margin:0}.action-list li{display:flex;gap:10px;padding:10px 0;border-bottom:1px solid #edf0f5}.action-list li:last-child{border:0}.check{width:23px;height:23px;border-radius:50%;border:2px solid #b7c7da;display:grid;place-items:center;color:#fff;flex:0 0 auto}.check.done{background:var(--teal);border-color:var(--teal)}
+    .timeline{height:150px;display:flex;align-items:end;gap:12px;padding-top:15px}.point{flex:1;text-align:center;color:var(--muted);font-size:.7rem}.point i{display:block;background:linear-gradient(#1769f2,#7b5cf0);border-radius:8px 8px 2px 2px;margin-bottom:7px;min-height:15px}.point b{display:block;color:var(--ink)}
+    .module-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.module-card{position:relative}.module-card .num{width:34px;height:34px;border-radius:10px;background:var(--navy);color:var(--gold2);display:grid;place-items:center;font-weight:900;margin-bottom:14px}.module-card h3{font-size:1rem}.module-card p{color:var(--muted);font-size:.86rem;min-height:55px}.module-card .status{font-size:.72rem;font-weight:800;color:var(--teal)}
+    .form-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}.field label{font-size:.8rem;font-weight:800;display:block;margin-bottom:6px}.field input,.field textarea,.field select{width:100%;padding:11px;border:1px solid #cfd8e5;border-radius:10px;background:white}.field textarea{min-height:105px;resize:vertical}.span2{grid-column:1/-1}
+    .tag-row{display:flex;flex-wrap:wrap;gap:8px}.tag{background:#edf3ff;color:#2455a4;border-radius:999px;padding:7px 10px;font-size:.76rem;font-weight:750}
+    .quiz-step{display:none}.quiz-step.active{display:block}.question{font-size:1.2rem;margin:6px 0 18px}.choices{display:grid;gap:9px}.choice{border:1px solid var(--line);background:#fff;border-radius:12px;padding:14px;text-align:left;color:var(--ink)}.choice:hover,.choice.selected{border-color:var(--blue);background:#edf4ff}.quiz-progress{height:8px;background:#e9edf3;border-radius:8px;margin:14px 0 22px;overflow:hidden}.quiz-progress span{height:100%;display:block;background:linear-gradient(90deg,var(--blue),var(--purple));width:20%;transition:.2s}
+    .resume{background:#fff;border:1px solid var(--line);padding:30px;max-width:760px;margin:auto;box-shadow:var(--shadow)}.resume h2{text-transform:uppercase;letter-spacing:.08em;text-align:center}.resume .contact{text-align:center;color:var(--muted);font-size:.82rem}.resume h4{border-bottom:2px solid var(--navy);padding-bottom:5px;margin:22px 0 9px}.resume [contenteditable]{outline:0}.resume [contenteditable]:focus{background:#fff8df}
+    .story-builder{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}.story-block{border-top:4px solid var(--blue);background:#f7f9fc;border-radius:10px;padding:13px}.story-block:nth-child(2){border-color:var(--purple)}.story-block:nth-child(3){border-color:var(--orange)}.story-block:nth-child(4){border-color:var(--teal)}.story-block textarea{width:100%;height:115px;border:0;background:transparent;resize:none}
+    .profile-preview{border-radius:15px;overflow:hidden;border:1px solid var(--line)}.profile-cover{height:120px;background:linear-gradient(115deg,#0a1730,#1b6bc6 55%,#6a48df)}.profile-main{padding:0 20px 20px}.profile-face{width:92px;height:92px;border:5px solid white;border-radius:50%;background:#dbe8ff;display:grid;place-items:center;font-size:2rem;margin-top:-47px}.profile-preview h2{margin:9px 0 0}.profile-preview p{color:var(--muted)}
+    .prompt{padding:14px;border-left:4px solid var(--gold);background:#fff9e9;border-radius:8px;margin:10px 0}.response-area{width:100%;min-height:150px;padding:13px;border:1px solid var(--line);border-radius:11px}
+    .portfolio-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.portfolio-item{padding:0;overflow:hidden}.portfolio-thumb{height:115px;background:linear-gradient(135deg,#dfeaff,#f3e7ff);display:grid;place-items:center;font-size:2rem}.portfolio-body{padding:15px}.evidence{font-size:.72rem;color:var(--purple);font-weight:800}
+    .opp{display:grid;grid-template-columns:54px 1fr auto;gap:14px;align-items:center;padding:14px 0;border-bottom:1px solid var(--line)}.date{border-radius:10px;background:#edf3ff;color:var(--blue);text-align:center;padding:7px;font-weight:900}.date small{display:block;font-size:.62rem}.opp p{margin:2px 0;color:var(--muted);font-size:.83rem}
+    .district-table{width:100%;border-collapse:collapse}.district-table th,.district-table td{text-align:left;padding:12px;border-bottom:1px solid var(--line);font-size:.84rem}.district-table th{color:var(--muted);font-size:.72rem;text-transform:uppercase;letter-spacing:.07em}.risk{padding:5px 8px;border-radius:999px;font-size:.7rem;font-weight:850;background:#fff0f1;color:var(--red)}.ready{background:#e9faf4;color:#178365}
+    .insight{border-left:4px solid var(--purple);padding:12px 14px;background:#f5f1ff;border-radius:8px;margin:10px 0}.notice{padding:12px 14px;background:#eaf8f5;color:#176c5c;border-radius:10px;font-size:.84rem}
+    .toast{position:fixed;right:24px;bottom:24px;background:#08152d;color:white;border-radius:12px;padding:13px 17px;box-shadow:0 15px 35px #06112455;transform:translateY(110px);opacity:0;transition:.25s;z-index:50}.toast.show{transform:none;opacity:1}
+    .role-only{display:none}.role-only.show{display:block}
+    @media(max-width:1100px){.kpis,.three{grid-template-columns:repeat(2,1fr)}.module-grid,.portfolio-grid{grid-template-columns:repeat(2,1fr)}.story-builder{grid-template-columns:1fr 1fr}}
+    @media(max-width:780px){.app{grid-template-columns:1fr}.sidebar{position:fixed;left:-270px;width:255px;transition:.25s}.sidebar.open{left:0}.mobile-menu{display:block}.topbar{padding:0 15px}.content{padding:18px 15px}.two,.kpis,.three,.module-grid,.portfolio-grid,.form-grid,.story-builder{grid-template-columns:1fr}.span2{grid-column:auto}.hero-stats{flex-wrap:wrap}.page-head{display:block}.page-head .btn{margin-top:12px}.score-wrap{align-items:flex-start}.bar-row{grid-template-columns:110px 1fr 32px}.top-actions .pill{display:none}}
+  </style>
+</head>
+<body>
+<div class="app">
+  <aside class="sidebar" id="sidebar">
+    <div class="brand"><div class="brandmark">O</div><div><strong>ORBIT</strong><small>SCHOOL TO SUCCESS™</small></div></div>
+    <div class="role-switch"><label for="role">Viewing as</label><select id="role"><option value="student">Student</option><option value="parent">Parent / Guardian</option><option value="educator">Educator / Counselor</option><option value="district">School / District</option></select></div>
+    <nav id="nav">
+      <div class="nav-group">My Journey</div>
+      <button class="nav-btn active" data-view="dashboard"><span class="nav-icon">⌂</span><span class="nav-label">Dashboard</span></button>
+      <button class="nav-btn" data-view="profile"><span class="nav-icon">◎</span><span class="nav-label">My Profile</span></button>
+      <button class="nav-btn" data-view="assessment"><span class="nav-icon">◈</span><span class="nav-label">Readiness Assessment</span></button>
+      <button class="nav-btn" data-view="paths"><span class="nav-icon">⌁</span><span class="nav-label">Career Paths</span></button>
+      <div class="nav-group">Build My Brand</div>
+      <button class="nav-btn" data-view="resume"><span class="nav-icon">▤</span><span class="nav-label">Résumé Builder</span></button>
+      <button class="nav-btn" data-view="story"><span class="nav-icon">✦</span><span class="nav-label">Career Story</span></button>
+      <button class="nav-btn" data-view="linkedin"><span class="nav-icon">in</span><span class="nav-label">LinkedIn Lab</span></button>
+      <button class="nav-btn" data-view="interview"><span class="nav-icon">◌</span><span class="nav-label">Interview Lab</span></button>
+      <div class="nav-group">Prove & Progress</div>
+      <button class="nav-btn" data-view="portfolio"><span class="nav-icon">▱</span><span class="nav-label">Evidence Portfolio</span></button>
+      <button class="nav-btn" data-view="plan"><span class="nav-icon">✓</span><span class="nav-label">Action Plan</span></button>
+      <button class="nav-btn" data-view="opportunities"><span class="nav-icon">↗</span><span class="nav-label">Opportunities</span></button>
+      <div class="nav-group role-only" data-roles="parent educator district">Insights</div>
+      <button class="nav-btn role-only" data-roles="parent" data-view="parent"><span class="nav-icon">♧</span><span class="nav-label">Parent Insights</span></button>
+      <button class="nav-btn role-only" data-roles="educator district" data-view="school"><span class="nav-icon">▦</span><span class="nav-label">School Insights</span></button>
+    </nav>
+    <div class="side-card"><small>Journey progress</small><b>68% complete</b><div class="side-meter"><span></span></div></div>
+  </aside>
+  <main>
+    <header class="topbar">
+      <div style="display:flex;align-items:center;gap:12px"><button class="mobile-menu" id="menuBtn" aria-label="Open menu">☰</button><div class="hello"><strong id="greeting">Welcome back, Jordan! 👋</strong><small>Prepare today. Lead tomorrow.</small></div></div>
+      <div class="top-actions"><button class="pill" data-view-jump="opportunities">3 new opportunities</button><button class="pill primary" data-view-jump="plan">Continue my plan</button><div class="avatar">JM</div></div>
+    </header>
+    <div class="content">
+      <section class="view active" id="view-dashboard">
+        <div class="page-head"><div><h1>Your readiness dashboard</h1><p>Your strengths, career evidence, and next steps—connected in one place.</p></div><button class="btn blue" data-view-jump="assessment">Update assessment</button></div>
+        <div class="grid kpis">
+          <div class="card kpi"><div><small>Readiness score</small><b>82/100</b><span class="delta">↑ 6 points this term</span></div><div class="kpi-symbol">◎</div></div>
+          <div class="card kpi"><div><small>Portfolio evidence</small><b>7</b><span class="delta">3 verified</span></div><div class="kpi-symbol">▱</div></div>
+          <div class="card kpi"><div><small>Top pathway match</small><b>96%</b><span class="delta">Apprenticeship</span></div><div class="kpi-symbol">⌁</div></div>
+          <div class="card kpi"><div><small>Next milestone</small><b>May 24</b><span class="delta">Career showcase</span></div><div class="kpi-symbol">◷</div></div>
+        </div>
+        <div class="grid two">
+          <div class="card"><h2>Overall workforce readiness</h2><div class="card-sub">A combined view of demonstrated capability, self-awareness, and career execution.</div><div class="score-wrap"><div class="ring" style="--value:82"><div><span>82</span><small>READY</small></div></div><div style="flex:1"><div class="bar-row"><span>Professionalism</span><div class="bar"><span style="width:91%"></span></div><b>91</b></div><div class="bar-row"><span>Communication</span><div class="bar"><span style="width:84%"></span></div><b>84</b></div><div class="bar-row"><span>Reliability</span><div class="bar"><span style="width:96%"></span></div><b>96</b></div><div class="bar-row"><span>Career execution</span><div class="bar"><span style="width:72%"></span></div><b>72</b></div></div></div></div>
+          <div class="card"><h2>Best-fit pathways</h2><div class="card-sub">Matches reflect interests, evidence, and preferred work conditions.</div><div class="path-list"><div class="path"><div class="path-icon">⚙</div><div><b>Skilled Trades</b><small>Hands-on • technical • visible results</small></div><span class="match">94%</span></div><div class="path"><div class="path-icon">⌘</div><div><b>Cybersecurity</b><small>Systems • analysis • problem solving</small></div><span class="match">91%</span></div><div class="path"><div class="path-icon">✦</div><div><b>Entrepreneurship</b><small>Autonomy • creation • leadership</small></div><span class="match">86%</span></div></div></div>
+        </div>
+        <div class="grid three" style="margin-top:16px">
+          <div class="card"><h3>Next best actions</h3><div class="card-sub">Complete these to reach a projected score of 87.</div><ul class="action-list"><li><span class="check done">✓</span><div><b>Complete strengths inventory</b><br><small>+3 readiness points</small></div></li><li><span class="check"></span><div><b>Add a project artifact</b><br><small>+2 readiness points</small></div></li><li><span class="check"></span><div><b>Finish résumé summary</b><br><small>+3 readiness points</small></div></li></ul></div>
+          <div class="card"><h3>Growth over time</h3><div class="card-sub">Your evidence-backed readiness trend.</div><div class="timeline"><div class="point"><i style="height:42%"></i><b>62</b>Dec</div><div class="point"><i style="height:55%"></i><b>68</b>Jan</div><div class="point"><i style="height:65%"></i><b>72</b>Feb</div><div class="point"><i style="height:76%"></i><b>76</b>Mar</div><div class="point"><i style="height:88%"></i><b>82</b>Now</div></div></div>
+          <div class="card"><h3>Strength signals</h3><div class="card-sub">Patterns supported by your recent evidence.</div><div class="tag-row"><span class="tag">Builder</span><span class="tag">Organizer</span><span class="tag">Systems thinker</span><span class="tag">Reliable</span><span class="tag">Visual learner</span><span class="tag">Team contributor</span></div><div class="insight"><b>Pattern spotted:</b> Your strongest work appears when expectations are clear and you can create something tangible.</div></div>
+        </div>
+      </section>
+
+      <section class="view" id="view-profile">
+        <div class="page-head"><div><h1>My professional identity</h1><p>Build a clear picture of who you are becoming—before you leave school.</p></div><button class="btn blue save-btn">Save profile</button></div>
+        <div class="grid two">
+          <div class="card"><h2>Profile details</h2><div class="card-sub">Your answers power your résumé, career story, and pathway matches.</div><div class="form-grid"><div class="field"><label>Preferred name</label><input value="Jordan Miller"></div><div class="field"><label>Grade level</label><select><option>11th grade</option><option>9th grade</option><option>10th grade</option><option>12th grade</option></select></div><div class="field span2"><label>My one-line introduction</label><input value="Future cybersecurity professional who enjoys solving systems problems and helping teams work smarter."></div><div class="field"><label>Top strength</label><input value="Organization"></div><div class="field"><label>Career interest</label><input value="Cybersecurity"></div><div class="field span2"><label>What I want people to remember about me</label><textarea>I am dependable, curious, and willing to learn. I like turning unclear problems into organized steps.</textarea></div></div></div>
+          <div class="card"><h2>Identity snapshot</h2><div class="card-sub">This grows as you add evidence and reflect.</div><div class="hero-card"><h2>I am becoming a confident, career-ready problem solver.</h2><p>I bring organization, reliability, and systems thinking to teams. My strongest evidence comes from technical projects and leadership in group assignments.</p><div class="hero-stats"><div><b>7</b><small>Evidence pieces</small></div><div><b>3</b><small>Verified skills</small></div><div><b>2</b><small>Career goals</small></div></div></div><div class="insight"><b>ORBIT signal:</b> Your stated interest in cybersecurity is supported by repeated systems-thinking and technical-aptitude evidence.</div></div>
+        </div>
+      </section>
+
+      <section class="view" id="view-assessment">
+        <div class="page-head"><div><h1>Career readiness assessment</h1><p>This short check-in updates your readiness signals. There are no “right” personalities or predetermined futures.</p></div><span class="pill">5 questions • about 3 minutes</span></div>
+        <div class="card" style="max-width:850px;margin:auto"><div class="quiz-progress"><span id="quizBar"></span></div>
+          <div class="quiz-step active"><small>QUESTION 1 OF 5</small><div class="question">When you receive a new project, what do you usually do first?</div><div class="choices"><button class="choice">Make a plan and organize the steps</button><button class="choice">Start experimenting immediately</button><button class="choice">Ask questions and gather examples</button><button class="choice">Find teammates and divide the work</button></div></div>
+          <div class="quiz-step"><small>QUESTION 2 OF 5</small><div class="question">Which result makes you feel most proud?</div><div class="choices"><button class="choice">I built or fixed something useful</button><button class="choice">I helped someone understand</button><button class="choice">I found a better way to do it</button><button class="choice">I helped the group succeed</button></div></div>
+          <div class="quiz-step"><small>QUESTION 3 OF 5</small><div class="question">Where do you tend to do your best work?</div><div class="choices"><button class="choice">A structured space with clear steps</button><button class="choice">A hands-on space with tools</button><button class="choice">A collaborative team environment</button><button class="choice">A quiet space where I can focus</button></div></div>
+          <div class="quiz-step"><small>QUESTION 4 OF 5</small><div class="question">When something goes wrong, what sounds most like you?</div><div class="choices"><button class="choice">I study what happened and adjust</button><button class="choice">I ask for help and keep going</button><button class="choice">I try a completely different approach</button><button class="choice">I help everyone stay calm and organized</button></div></div>
+          <div class="quiz-step"><small>QUESTION 5 OF 5</small><div class="question">What would you most like to strengthen this semester?</div><div class="choices"><button class="choice">Speaking with confidence</button><button class="choice">Technical or job-specific skills</button><button class="choice">Leadership and teamwork</button><button class="choice">Career planning and job-search skills</button></div></div>
+          <div style="display:flex;justify-content:space-between;margin-top:22px"><button class="btn outline" id="quizBack">Back</button><button class="btn blue" id="quizNext">Next question</button></div>
+        </div>
+      </section>
+
+      <section class="view" id="view-paths">
+        <div class="page-head"><div><h1>Career pathway explorer</h1><p>Compare multiple routes using fit, time, cost, opportunity, and the evidence you already have.</p></div><button class="btn outline">Compare selected paths</button></div>
+        <div class="grid module-grid">
+          <div class="card module-card"><div class="num">96</div><h3>HVAC Apprenticeship</h3><p>Paid, hands-on training that builds technical expertise while you work.</p><div class="tag-row"><span class="tag">12 months</span><span class="tag">Minimal debt</span><span class="tag">$62K est.</span></div></div>
+          <div class="card module-card"><div class="num">91</div><h3>Cybersecurity A.S.</h3><p>A two-year degree pathway into security operations, networks, and systems.</p><div class="tag-row"><span class="tag">2 years</span><span class="tag">Low debt</span><span class="tag">$72K est.</span></div></div>
+          <div class="card module-card"><div class="num">86</div><h3>Entrepreneurship</h3><p>Build a service or product using your organization and systems strengths.</p><div class="tag-row"><span class="tag">Flexible</span><span class="tag">Variable cost</span><span class="tag">Income varies</span></div></div>
+          <div class="card module-card"><div class="num">84</div><h3>Military Technology</h3><p>Technical training, service experience, and defined advancement pathways.</p><div class="tag-row"><span class="tag">Training included</span><span class="tag">Benefits</span></div></div>
+          <div class="card module-card"><div class="num">78</div><h3>Operations Coordinator</h3><p>Use planning, communication, and process skills to keep organizations moving.</p><div class="tag-row"><span class="tag">Certificate or degree</span><span class="tag">$58K est.</span></div></div>
+          <div class="card module-card"><div class="num">74</div><h3>Engineering Technology</h3><p>Apply design, math, and technical systems thinking to real-world projects.</p><div class="tag-row"><span class="tag">2–4 years</span><span class="tag">$78K est.</span></div></div>
+        </div>
+      </section>
+
+      <section class="view" id="view-resume">
+        <div class="page-head"><div><h1>Student résumé builder</h1><p>Translate classes, projects, volunteering, CTE, and real-world experiences into employer-ready evidence.</p></div><button class="btn blue save-btn">Save résumé</button></div>
+        <div class="resume"><h2 contenteditable="true">Jordan Miller</h2><div class="contact" contenteditable="true">Davenport, FL • jordan@email.com • linkedin.com/in/jordanmiller</div><h4>CAREER PROFILE</h4><p contenteditable="true">Organized and dependable high-school junior with hands-on experience in technology projects, team collaboration, and problem solving. Interested in cybersecurity and technical career pathways.</p><h4>EDUCATION</h4><p contenteditable="true"><b>Davenport High School</b> — Expected May 2027<br>Relevant coursework: Digital Information Technology, Cybersecurity Foundations</p><h4>PROJECT EXPERIENCE</h4><p contenteditable="true"><b>Network Security Challenge | CTE Course</b><br>• Analyzed a simulated network for vulnerabilities and documented five recommended security improvements.<br>• Collaborated with a four-student team to present findings using clear technical and nontechnical language.</p><h4>LEADERSHIP & SERVICE</h4><p contenteditable="true"><b>Student Event Volunteer</b><br>• Organized registration materials and assisted 75+ attendees during a school career event.</p><h4>SKILLS</h4><p contenteditable="true">Organization • Microsoft Office • Teamwork • Written Communication • Basic Network Security</p><div class="notice">Tip: click directly into any section to edit it. Replace every example with evidence that is true for you.</div></div>
+      </section>
+
+      <section class="view" id="view-story">
+        <div class="page-head"><div><h1>Career story builder</h1><p>Use the CLEAR structure to explain what you did, why it mattered, and what it reveals about you.</p></div><button class="btn blue save-btn">Build my story</button></div>
+        <div class="card"><div class="story-builder"><div class="story-block"><b>C — Context</b><p>What was happening?</p><textarea placeholder="Our robotics team needed to..."></textarea></div><div class="story-block"><b>L — Leadership</b><p>What role did you take?</p><textarea placeholder="I volunteered to organize..."></textarea></div><div class="story-block"><b>E — Execution</b><p>What actions did you take?</p><textarea placeholder="I created a checklist and..."></textarea></div><div class="story-block"><b>AR — Achievement + Relevance</b><p>What changed, and why does it matter?</p><textarea placeholder="We completed the project..."></textarea></div></div><div class="insight"><b>Your final story can power:</b> interview answers, résumé bullets, scholarship essays, LinkedIn content, and portfolio captions.</div></div>
+      </section>
+
+      <section class="view" id="view-linkedin">
+        <div class="page-head"><div><h1>LinkedIn readiness lab</h1><p>Create a professional digital presence that reflects your direction without pretending you already know everything.</p></div><button class="btn blue save-btn">Save profile draft</button></div>
+        <div class="grid two">
+          <div class="card"><h2>Profile builder</h2><div class="form-grid"><div class="field span2"><label>Headline</label><input value="High School Student | Future Cybersecurity Professional | CTE Technology Student"></div><div class="field span2"><label>About section</label><textarea>I am a high-school junior exploring cybersecurity and technical career pathways. Through CTE coursework and team projects, I am building skills in organization, problem solving, communication, and basic network security.</textarea></div><div class="field span2"><label>Featured evidence</label><select><option>Network Security Challenge</option><option>Career Showcase Presentation</option><option>Community Event Plan</option></select></div></div><div class="notice">Safety reminder: follow your school and family guidelines. Do not post personal contact details, schedules, or private student records.</div></div>
+          <div class="profile-preview"><div class="profile-cover"></div><div class="profile-main"><div class="profile-face">JM</div><h2>Jordan Miller</h2><b>High School Student | Future Cybersecurity Professional | CTE Technology Student</b><p>Davenport, Florida · 37 connections</p><button class="btn light">Open to learning</button><h3 style="margin-top:22px">About</h3><p>I am a high-school junior exploring cybersecurity and technical career pathways...</p></div></div>
+        </div>
+      </section>
+
+      <section class="view" id="view-interview">
+        <div class="page-head"><div><h1>Interview practice lab</h1><p>Practice clear, specific answers using evidence from your actual experiences.</p></div><span class="pill">Practice mode</span></div>
+        <div class="grid two"><div class="card"><h2>Today's question</h2><div class="prompt">“Tell me about a time you had to learn something quickly.”</div><label for="answer"><b>Your answer</b></label><textarea id="answer" class="response-area" placeholder="Use a specific class, project, activity, job, or volunteer experience..."></textarea><div style="display:flex;gap:9px;margin-top:12px"><button class="btn blue save-btn">Save answer</button><button class="btn outline" id="newQuestion">Try another question</button></div></div><div class="card"><h2>Evidence checklist</h2><div class="card-sub">A strong answer usually includes all four.</div><ul class="action-list"><li><span class="check">1</span><div><b>Situation</b><br><small>Give enough context to understand the challenge.</small></div></li><li><span class="check">2</span><div><b>Your action</b><br><small>Be clear about what you—not only the team—did.</small></div></li><li><span class="check">3</span><div><b>Result</b><br><small>Explain what improved, finished, or changed.</small></div></li><li><span class="check">4</span><div><b>Reflection</b><br><small>Connect the lesson to the opportunity.</small></div></li></ul></div></div>
+      </section>
+
+      <section class="view" id="view-portfolio">
+        <div class="page-head"><div><h1>Evidence portfolio</h1><p>Show what you can demonstrate—not only what you say you can do.</p></div><button class="btn blue" id="addEvidence">Add evidence</button></div>
+        <div class="grid portfolio-grid" id="portfolioGrid">
+          <div class="card portfolio-item"><div class="portfolio-thumb">🔐</div><div class="portfolio-body"><span class="evidence">TECHNICAL PROJECT</span><h3>Network Security Challenge</h3><p>Identified vulnerabilities and presented five recommendations.</p><div class="tag-row"><span class="tag">Systems thinking</span><span class="tag">Communication</span></div></div></div>
+          <div class="card portfolio-item"><div class="portfolio-thumb">📋</div><div class="portfolio-body"><span class="evidence">LEADERSHIP EVIDENCE</span><h3>Community Event Plan</h3><p>Coordinated responsibilities, timeline, and attendee materials.</p><div class="tag-row"><span class="tag">Organization</span><span class="tag">Reliability</span></div></div></div>
+          <div class="card portfolio-item"><div class="portfolio-thumb">🎤</div><div class="portfolio-body"><span class="evidence">PRESENTATION</span><h3>Career Showcase Pitch</h3><p>Delivered a three-minute introduction to local professionals.</p><div class="tag-row"><span class="tag">Confidence</span><span class="tag">Professionalism</span></div></div></div>
+        </div>
+      </section>
+
+      <section class="view" id="view-plan">
+        <div class="page-head"><div><h1>My readiness action plan</h1><p>Small, evidence-producing steps tied to your goals and current readiness gaps.</p></div><button class="btn blue save-btn">Save plan</button></div>
+        <div class="grid two"><div class="card"><h2>This month</h2><ul class="action-list"><li><button class="check toggle-check"></button><div><b>Finish résumé career profile</b><br><small>Career execution • due May 18</small></div></li><li><button class="check toggle-check"></button><div><b>Attend apprenticeship information session</b><br><small>Career exposure • due May 24</small></div></li><li><button class="check toggle-check"></button><div><b>Add one technical project artifact</b><br><small>Evidence confidence • due May 28</small></div></li><li><button class="check toggle-check"></button><div><b>Practice two interview answers</b><br><small>Communication • due May 30</small></div></li></ul></div><div class="card"><h2>Projected impact</h2><div class="score-wrap"><div class="ring" style="--value:87"><div><span>87</span><small>PROJECTED</small></div></div><div><h3>On track for “career-ready”</h3><p class="card-sub">Completing these four actions could strengthen career execution, evidence confidence, and exposure.</p><span class="tag">+5 projected points</span></div></div><div class="insight"><b>Why this plan:</b> Your capability evidence is strong. Your greatest opportunity is translating it for employers.</div></div></div>
+      </section>
+
+      <section class="view" id="view-opportunities">
+        <div class="page-head"><div><h1>Opportunities</h1><p>Experiences matched to your interests, readiness, location, and development goals.</p></div><button class="btn outline">Filters</button></div>
+        <div class="card"><div class="opp"><div class="date"><small>MAY</small>24</div><div><b>Skilled Trades Apprenticeship Information Session</b><p>Local Electrical Union • In person • Career exposure match</p></div><button class="btn light save-btn">Register</button></div><div class="opp"><div class="date"><small>MAY</small>28</div><div><b>Student Résumé Workshop</b><p>High School Media Center • Build your brand</p></div><button class="btn light save-btn">Register</button></div><div class="opp"><div class="date"><small>JUN</small>02</div><div><b>Technology Job Shadow Day</b><p>Regional employer • Technical pathway match</p></div><button class="btn light save-btn">Apply</button></div><div class="opp"><div class="date"><small>JUN</small>10</div><div><b>SkillsUSA Regional Competition</b><p>Team-based technical challenge • Portfolio evidence</p></div><button class="btn light save-btn">Register</button></div></div>
+      </section>
+
+      <section class="view" id="view-parent">
+        <div class="page-head"><div><h1>Parent and guardian insights</h1><p>See progress, reinforce strengths, and support next steps without limiting the student's choices.</p></div><button class="btn outline">Download progress summary</button></div>
+        <div class="grid kpis"><div class="card kpi"><div><small>Current readiness</small><b>82</b><span class="delta">↑ 6 this term</span></div><div class="kpi-symbol">◎</div></div><div class="card kpi"><div><small>Actions complete</small><b>7/11</b><span class="delta">On track</span></div><div class="kpi-symbol">✓</div></div><div class="card kpi"><div><small>Evidence pieces</small><b>7</b><span class="delta">3 verified</span></div><div class="kpi-symbol">▱</div></div><div class="card kpi"><div><small>Next check-in</small><b>18 days</b><span class="delta">Counselor meeting</span></div><div class="kpi-symbol">◷</div></div></div>
+        <div class="grid two"><div class="card"><h2>What the evidence says</h2><div class="insight"><b>Strong pattern:</b> Jordan consistently demonstrates organization and reliability across class projects and school activities.</div><div class="insight"><b>Growing signal:</b> Communication confidence has improved across two presentations, but continued practice is recommended.</div><div class="insight"><b>Exposure gap:</b> Jordan has explored technology pathways online but has not completed an employer visit or job shadow.</div></div><div class="card"><h2>Ways to support this month</h2><ul class="action-list"><li><span class="check done">✓</span><div><b>Ask about the newest portfolio item</b><br><small>Let the student explain what the work proves.</small></div></li><li><span class="check">2</span><div><b>Review apprenticeship information together</b><br><small>Compare time, cost, and work style—not prestige.</small></div></li><li><span class="check">3</span><div><b>Practice one interview question</b><br><small>Give specific, encouraging feedback.</small></div></li></ul></div></div>
+      </section>
+
+      <section class="view" id="view-school">
+        <div class="page-head"><div><h1>School and district readiness intelligence</h1><p>See cohort readiness, exposure gaps, evidence confidence, and intervention needs without surveillance.</p></div><button class="btn blue">Create cohort report</button></div>
+        <div class="grid kpis"><div class="card kpi"><div><small>Students enrolled</small><b>248</b><span class="delta">87% active</span></div><div class="kpi-symbol">♧</div></div><div class="card kpi"><div><small>Average readiness</small><b>71</b><span class="delta">↑ 8 from baseline</span></div><div class="kpi-symbol">◎</div></div><div class="card kpi"><div><small>Portfolio completion</small><b>64%</b><span class="delta">159 students</span></div><div class="kpi-symbol">▱</div></div><div class="card kpi"><div><small>Referral ready</small><b>83</b><span class="delta">33% of cohort</span></div><div class="kpi-symbol">↗</div></div></div>
+        <div class="grid two"><div class="card"><h2>Cohort readiness by dimension</h2><div class="bar-row"><span>Professionalism</span><div class="bar"><span style="width:79%"></span></div><b>79</b></div><div class="bar-row"><span>Communication</span><div class="bar"><span style="width:68%"></span></div><b>68</b></div><div class="bar-row"><span>Career clarity</span><div class="bar"><span style="width:64%"></span></div><b>64</b></div><div class="bar-row"><span>Evidence confidence</span><div class="bar"><span style="width:61%"></span></div><b>61</b></div><div class="bar-row"><span>Job-search execution</span><div class="bar"><span style="width:58%"></span></div><b>58</b></div></div><div class="card"><h2>Root-cause signals</h2><div class="insight"><b>Career Exposure Gap</b><br>42% of students have no documented employer, job-shadow, or work-based learning exposure.</div><div class="insight"><b>Foundational Skills Gap</b><br>18% need additional literacy or numeracy support before pathway execution.</div><div class="insight"><b>Guardian Engagement Gap</b><br>31% have no completed family touchpoint this term.</div></div></div>
+        <div class="card" style="margin-top:16px;overflow:auto"><h2>Programs and recommended interventions</h2><table class="district-table"><thead><tr><th>Program</th><th>Students</th><th>Avg. score</th><th>Primary gap</th><th>Recommended intervention</th><th>Status</th></tr></thead><tbody><tr><td>Digital Technology</td><td>72</td><td>76</td><td>Employer exposure</td><td>Technology Job Shadow Day</td><td><span class="risk ready">On track</span></td></tr><tr><td>Health Sciences</td><td>61</td><td>73</td><td>Interview confidence</td><td>Career Story + Interview Lab</td><td><span class="risk ready">On track</span></td></tr><tr><td>Construction Trades</td><td>49</td><td>69</td><td>Portfolio evidence</td><td>Evidence Capture Sprint</td><td><span class="risk">Needs action</span></td></tr><tr><td>Business & Entrepreneurship</td><td>66</td><td>65</td><td>Career clarity</td><td>Pathway Discovery Workshop</td><td><span class="risk">Needs action</span></td></tr></tbody></table><div class="notice" style="margin-top:15px">ORBIT uses program evidence and declared inputs to calculate and display readiness. It does not monitor private browsing, messages, location, or unrelated student activity.</div></div>
+      </section>
+    </div>
+  </main>
+</div>
+<div class="toast" id="toast" role="status" aria-live="polite">Saved successfully.</div>
+<script>
+  const state={view:"dashboard",role:"student",quiz:0};
+  const views=[...document.querySelectorAll(".view")],navBtns=[...document.querySelectorAll(".nav-btn[data-view]")];
+  function showView(id){
+    state.view=id; views.forEach(v=>v.classList.toggle("active",v.id==="view-"+id));
+    navBtns.forEach(b=>b.classList.toggle("active",b.dataset.view===id));
+    document.getElementById("sidebar").classList.remove("open"); window.scrollTo({top:0,behavior:"smooth"});
+  }
+  navBtns.forEach(b=>b.addEventListener("click",()=>showView(b.dataset.view)));
+  document.querySelectorAll("[data-view-jump]").forEach(b=>b.addEventListener("click",()=>showView(b.dataset.viewJump)));
+  document.getElementById("menuBtn").addEventListener("click",()=>document.getElementById("sidebar").classList.toggle("open"));
+  const role=document.getElementById("role");
+  function applyRole(){
+    state.role=role.value;
+    document.querySelectorAll(".role-only").forEach(el=>el.classList.toggle("show",(el.dataset.roles||"").split(" ").includes(state.role)));
+    const names={student:"Welcome back, Jordan! 👋",parent:"Jordan's progress at a glance",educator:"Your student readiness workspace",district:"District readiness command center"};
+    document.getElementById("greeting").textContent=names[state.role];
+    if(state.role==="parent")showView("parent"); if(state.role==="educator"||state.role==="district")showView("school"); if(state.role==="student"&&(state.view==="parent"||state.view==="school"))showView("dashboard");
+  }
+  role.addEventListener("change",applyRole); applyRole();
+  const toast=document.getElementById("toast"); function flash(msg="Saved successfully."){toast.textContent=msg;toast.classList.add("show");setTimeout(()=>toast.classList.remove("show"),2200)}
+  document.querySelectorAll(".save-btn").forEach(b=>b.addEventListener("click",()=>flash(b.textContent.includes("Register")?"Registration saved.":"Your work has been saved.")));
+  document.querySelectorAll(".toggle-check").forEach(b=>b.addEventListener("click",()=>{b.classList.toggle("done");b.textContent=b.classList.contains("done")?"✓":"";flash("Action plan updated.")}));
+  const steps=[...document.querySelectorAll(".quiz-step")],bar=document.getElementById("quizBar"),next=document.getElementById("quizNext"),back=document.getElementById("quizBack");
+  document.querySelectorAll(".choice").forEach(c=>c.addEventListener("click",()=>{c.parentElement.querySelectorAll(".choice").forEach(x=>x.classList.remove("selected"));c.classList.add("selected")}));
+  function renderQuiz(){steps.forEach((s,i)=>s.classList.toggle("active",i===state.quiz));bar.style.width=((state.quiz+1)/steps.length*100)+"%";back.disabled=state.quiz===0;next.textContent=state.quiz===steps.length-1?"Complete assessment":"Next question"}
+  next.addEventListener("click",()=>{if(!steps[state.quiz].querySelector(".selected")){flash("Choose the answer that fits you best.");return}if(state.quiz<steps.length-1){state.quiz++;renderQuiz()}else{flash("Assessment complete — readiness signals updated.");setTimeout(()=>showView("dashboard"),900)}});
+  back.addEventListener("click",()=>{if(state.quiz>0){state.quiz--;renderQuiz()}});renderQuiz();
+  const interviewQuestions=["Tell me about a time you worked through a difficult problem.","Describe a time you contributed to a team.","What is one strength you are actively developing?","Tell me about a project you are proud of."],prompt=document.querySelector("#view-interview .prompt");
+  document.getElementById("newQuestion").addEventListener("click",()=>{prompt.textContent="“"+interviewQuestions[Math.floor(Math.random()*interviewQuestions.length)]+"”"});
+  document.getElementById("addEvidence").addEventListener("click",()=>{const item=document.createElement("div");item.className="card portfolio-item";item.innerHTML='<div class="portfolio-thumb">＋</div><div class="portfolio-body"><span class="evidence">NEW EVIDENCE</span><h3 contenteditable="true">Name your project</h3><p contenteditable="true">Describe what you created, contributed, or learned.</p><div class="tag-row"><span class="tag">Add skill</span></div></div>';document.getElementById("portfolioGrid").appendChild(item);flash("New evidence card added.")});
+</script>
+</body>
+</html>
